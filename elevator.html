@@ -1,0 +1,342 @@
+<!doctype html>
+<html>
+<style>
+    .elevator{width:100px; height:50px; position:absolute;}
+    .E_button{text-align:center; width:50px; height:46px; position:absolute; border:2px solid blue;}
+</style>
+<body style="background-color:yellow;">
+
+
+<h1>Elevator Control System</h1>
+<!--楼层-->
+<img id="numbers" src="number.jpg" width="50" height="1000" alt="" style = "position:absolute; left:50px; top:200px;"/>
+
+<!--电梯井-->
+<img id="hoistway_1" src="verticle.jpg" width="100" height="1000" alt=""
+     style = "position:absolute; left:200px; top:200px;"/>
+<img id="hoistway_2" src="verticle.jpg" width="100" height="1000" alt=""
+     style = "position:absolute; left:400px; top:200px;"/>
+<img id="hoistway_3" src="verticle.jpg" width="100" height="1000" alt=""
+     style = "position:absolute; left:600px; top:200px;"/>
+<img id="hoistway_4" src="verticle.jpg" width="100" height="1000" alt=""
+     style = "position:absolute; left:800px; top:200px;"/>
+<img id="hoistway_5" src="verticle.jpg" width="100" height="1000" alt=""
+     style = "position:absolute; left:1000px; top:200px;"/>
+
+<!--电梯-->
+<div id="elevator_1" class ="elevator"  style="background:#00EC00; left:200px; top:1150px;"></div>
+<div id="elevator_2" class ="elevator"  style="background:#00EC00; left:400px; top:1150px;"></div>
+<div id="elevator_3" class ="elevator"  style="background:#00EC00; left:600px; top:1150px;"></div>
+<div id="elevator_4" class ="elevator"  style="background:#00EC00; left:800px; top:1150px;"></div>
+<div id="elevator_5" class ="elevator"  style="background:#00EC00; left:1000px; top:1150px;"></div>
+
+<!--上升按钮-->
+<img id="up_1" src="up.jpg" onclick="style.border = '4px solid white'; work(1, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:1150px;"/>
+<img id="up_2" src="up.jpg" onclick="style.border = '4px solid white'; work(2, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:1100px;"/>
+<img id="up_3" src="up.jpg" onclick="style.border = '4px solid white'; work(3, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:1050px;"/>
+<img id="up_4" src="up.jpg" onclick="style.border = '4px solid white'; work(4, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:1000px;"/>
+<img id="up_5" src="up.jpg" onclick="style.border = '4px solid white'; work(5, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:950px;"/>
+<img id="up_6" src="up.jpg" onclick="style.border = '4px solid white'; work(6, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:900px;"/>
+<img id="up_7" src="up.jpg" onclick="style.border = '4px solid white'; work(7, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:850px;"/>
+<img id="up_8" src="up.jpg" onclick="style.border = '4px solid white'; work(8, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:800px;"/>
+<img id="up_9" src="up.jpg" onclick="style.border = '4px solid white'; work(9, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:750px;"/>
+<img id="up_10" src="up.jpg" onclick="style.border = '4px solid white'; work(10, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:700px;"/>
+<img id="up_11" src="up.jpg" onclick="style.border = '4px solid white'; work(11, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:650px;"/>
+<img id="up_12" src="up.jpg" onclick="style.border = '4px solid white'; work(12, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:600px;"/>
+<img id="up_13" src="up.jpg" onclick="style.border = '4px solid white'; work(13, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:550px;"/>
+<img id="up_14" src="up.jpg" onclick="style.border = '4px solid white'; work(14, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:500px;"/>
+<img id="up_15" src="up.jpg" onclick="style.border = '4px solid white'; work(15, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:450px;"/>
+<img id="up_16" src="up.jpg" onclick="style.border = '4px solid white'; work(16, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:400px;"/>
+<img id="up_17" src="up.jpg" onclick="style.border = '4px solid white'; work(17, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:350px;"/>
+<img id="up_18" src="up.jpg" onclick="style.border = '4px solid white'; work(18, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:300px;"/>
+<img id="up_19" src="up.jpg" onclick="style.border = '4px solid white'; work(19, 'up')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:250px;"/>
+
+<!--下降按钮-->
+<img id="down_2" src="down.jpg" onclick="style.border = '4px solid white'; work(2, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:1125px;"/>
+<img id="down_3" src="down.jpg" onclick="style.border = '4px solid white'; work(3, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:1075px;"/>
+<img id="down_4" src="down.jpg" onclick="style.border = '4px solid white'; work(4, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:1025px;"/>
+<img id="down_5" src="down.jpg" onclick="style.border = '4px solid white'; work(5, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:975px;"/>
+<img id="down_6" src="down.jpg" onclick="style.border = '4px solid white'; work(6, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:925px;"/>
+<img id="down_7" src="down.jpg" onclick="style.border = '4px solid white'; work(7, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:875px;"/>
+<img id="down_8" src="down.jpg" onclick="style.border = '4px solid white'; work(8, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:825px;"/>
+<img id="down_9" src="down.jpg" onclick="style.border = '4px solid white'; work(9, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:775px;"/>
+<img id="down_10" src="down.jpg" onclick="style.border = '4px solid white'; work(10, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:725px;"/>
+<img id="down_11" src="down.jpg" onclick="style.border = '4px solid white'; work(11, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:675px;"/>
+<img id="down_12" src="down.jpg" onclick="style.border = '4px solid white'; work(12, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:625px;"/>
+<img id="down_13" src="down.jpg" onclick="style.border = '4px solid white'; work(13, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:575px;"/>
+<img id="down_14" src="down.jpg" onclick="style.border = '4px solid white'; work(14, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:525px;"/>
+<img id="down_15" src="down.jpg" onclick="style.border = '4px solid white'; work(15, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:475px;"/>
+<img id="down_16" src="down.jpg" onclick="style.border = '4px solid white'; work(16, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:425px;"/>
+<img id="down_17" src="down.jpg" onclick="style.border = '4px solid white'; work(17, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:375px;"/>
+<img id="down_18" src="down.jpg" onclick="style.border = '4px solid white'; work(18, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:325px;"/>
+<img id="down_19" src="down.jpg" onclick="style.border = '4px solid white'; work(19, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:275px;"/>
+<img id="down_20" src="down.jpg" onclick="style.border = '4px solid white'; work(20, 'down')"
+     width="50" height="25" alt="" style = "position:absolute; left:100px; top:225px;"/>
+
+<!--电梯1内按钮-->
+<div id="1_alert" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; alert1()"
+     style="background:#FBFBFF; left:300px; top:150px;"><p>ALERT</p></div>
+<div id="1_f1" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(1)"
+     style="background:#FBFBFF; left:300px; top:1150px;"><p>1</p></div>
+<div id="1_f2" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(2)"
+     style="background:#FBFBFF; left:300px; top:1100px;"><p>2</p></div>
+<div id="1_f3" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(3)"
+     style="background:#FBFBFF; left:300px; top:1050px;"><p>3</p></div>
+<div id="1_f4" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(4)"
+     style="background:#FBFBFF; left:300px; top:1000px;"><p>4</p></div>
+<div id="1_f5" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(5)"
+     style="background:#FBFBFF; left:300px; top:950px;"><p>5</p></div>
+<div id="1_f6" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(6)"
+     style="background:#FBFBFF; left:300px; top:900px;"><p>6</p></div>
+<div id="1_f7" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(7)"
+     style="background:#FBFBFF; left:300px; top:850px;"><p>7</p></div>
+<div id="1_f8" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(8)"
+     style="background:#FBFBFF; left:300px; top:800px;"><p>8</p></div>
+<div id="1_f9" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(9)"
+     style="background:#FBFBFF; left:300px; top:750px;"><p>9</p></div>
+<div id="1_f10" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(10)"
+     style="background:#FBFBFF; left:300px; top:700px;"><p>10</p></div>
+<div id="1_f11" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(11)"
+     style="background:#FBFBFF; left:300px; top:650px;"><p>11</p></div>
+<div id="1_f12" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(12)"
+     style="background:#FBFBFF; left:300px; top:600px;"><p>12</p></div>
+<div id="1_f13" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(13)"
+     style="background:#FBFBFF; left:300px; top:550px;"><p>13</p></div>
+<div id="1_f14" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(14)"
+     style="background:#FBFBFF; left:300px; top:500px;"><p>14</p></div>
+<div id="1_f15" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(15)"
+     style="background:#FBFBFF; left:300px; top:450px;"><p>15</p></div>
+<div id="1_f16" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(16)"
+     style="background:#FBFBFF; left:300px; top:400px;"><p>16</p></div>
+<div id="1_f17" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(17)"
+     style="background:#FBFBFF; left:300px; top:350px;"><p>17</p></div>
+<div id="1_f18" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(18)"
+     style="background:#FBFBFF; left:300px; top:300px;"><p>18</p></div>
+<div id="1_f19" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(19)"
+     style="background:#FBFBFF; left:300px; top:250px;"><p>19</p></div>
+<div id="1_f20" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport1(20)"
+     style="background:#FBFBFF; left:300px; top:200px;"><p>20</p></div>
+
+<!--电梯2内按钮-->
+<div id="2_alert" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; alert2()"
+     style="background:#FBFBFF; left:500px; top:150px;"><p>ALERT</p></div>
+<div id="2_f1" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(1)"
+     style="background:#FBFBFF; left:500px; top:1150px;"><p>1</p></div>
+<div id="2_f2" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(2)"
+     style="background:#FBFBFF; left:500px; top:1100px;"><p>2</p></div>
+<div id="2_f3" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(3)"
+     style="background:#FBFBFF; left:500px; top:1050px;"><p>3</p></div>
+<div id="2_f4" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(4)"
+     style="background:#FBFBFF; left:500px; top:1000px;"><p>4</p></div>
+<div id="2_f5" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(5)"
+     style="background:#FBFBFF; left:500px; top:950px;"><p>5</p></div>
+<div id="2_f6" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(6)"
+     style="background:#FBFBFF; left:500px; top:900px;"><p>6</p></div>
+<div id="2_f7" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(7)"
+     style="background:#FBFBFF; left:500px; top:850px;"><p>7</p></div>
+<div id="2_f8" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(8)"
+     style="background:#FBFBFF; left:500px; top:800px;"><p>8</p></div>
+<div id="2_f9" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(9)"
+     style="background:#FBFBFF; left:500px; top:750px;"><p>9</p></div>
+<div id="2_f10" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(10)"
+     style="background:#FBFBFF; left:500px; top:700px;"><p>10</p></div>
+<div id="2_f11" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(11)"
+     style="background:#FBFBFF; left:500px; top:650px;"><p>11</p></div>
+<div id="2_f12" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(12)"
+     style="background:#FBFBFF; left:500px; top:600px;"><p>12</p></div>
+<div id="2_f13" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(13)"
+     style="background:#FBFBFF; left:500px; top:550px;"><p>13</p></div>
+<div id="2_f14" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(14)"
+     style="background:#FBFBFF; left:500px; top:500px;"><p>14</p></div>
+<div id="2_f15" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(15)"
+     style="background:#FBFBFF; left:500px; top:450px;"><p>15</p></div>
+<div id="2_f16" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(16)"
+     style="background:#FBFBFF; left:500px; top:400px;"><p>16</p></div>
+<div id="2_f17" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(17)"
+     style="background:#FBFBFF; left:500px; top:350px;"><p>17</p></div>
+<div id="2_f18" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(18)"
+     style="background:#FBFBFF; left:500px; top:300px;"><p>18</p></div>
+<div id="2_f19" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(19)"
+     style="background:#FBFBFF; left:500px; top:250px;"><p>19</p></div>
+<div id="2_f20" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport2(20)"
+     style="background:#FBFBFF; left:500px; top:200px;"><p>20</p></div>
+
+<!--电梯3内按钮-->
+<div id="3_alert" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; alert3()"
+     style="background:#FBFBFF; left:700px; top:150px;"><p>ALERT</p></div>
+<div id="3_f1" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(1)"
+     style="background:#FBFBFF; left:700px; top:1150px;"><p>1</p></div>
+<div id="3_f2" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(2)"
+     style="background:#FBFBFF; left:700px; top:1100px;"><p>2</p></div>
+<div id="3_f3" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(3)"
+     style="background:#FBFBFF; left:700px; top:1050px;"><p>3</p></div>
+<div id="3_f4" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(4)"
+     style="background:#FBFBFF; left:700px; top:1000px;"><p>4</p></div>
+<div id="3_f5" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(5)"
+     style="background:#FBFBFF; left:700px; top:950px;"><p>5</p></div>
+<div id="3_f6" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(6)"
+     style="background:#FBFBFF; left:700px; top:900px;"><p>6</p></div>
+<div id="3_f7" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(7)"
+     style="background:#FBFBFF; left:700px; top:850px;"><p>7</p></div>
+<div id="3_f8" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(8)"
+     style="background:#FBFBFF; left:700px; top:800px;"><p>8</p></div>
+<div id="3_f9" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(9)"
+     style="background:#FBFBFF; left:700px; top:750px;"><p>9</p></div>
+<div id="3_f10" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(10)"
+     style="background:#FBFBFF; left:700px; top:700px;"><p>10</p></div>
+<div id="3_f11" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(11)"
+     style="background:#FBFBFF; left:700px; top:650px;"><p>11</p></div>
+<div id="3_f12" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(12)"
+     style="background:#FBFBFF; left:700px; top:600px;"><p>12</p></div>
+<div id="3_f13" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(13)"
+     style="background:#FBFBFF; left:700px; top:550px;"><p>13</p></div>
+<div id="3_f14" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(14)"
+     style="background:#FBFBFF; left:700px; top:500px;"><p>14</p></div>
+<div id="3_f15" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(15)"
+     style="background:#FBFBFF; left:700px; top:450px;"><p>15</p></div>
+<div id="3_f16" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(16)"
+     style="background:#FBFBFF; left:700px; top:400px;"><p>16</p></div>
+<div id="3_f17" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(17)"
+     style="background:#FBFBFF; left:700px; top:350px;"><p>17</p></div>
+<div id="3_f18" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(18)"
+     style="background:#FBFBFF; left:700px; top:300px;"><p>18</p></div>
+<div id="3_f19" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(19)"
+     style="background:#FBFBFF; left:700px; top:250px;"><p>19</p></div>
+<div id="3_f20" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport3(20)"
+     style="background:#FBFBFF; left:700px; top:200px;"><p>20</p></div>
+
+<!--电梯4内按钮-->
+<div id="4_alert" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; alert4()"
+     style="background:#FBFBFF; left:900px; top:150px;"><p>ALERT</p></div>
+<div id="4_f1" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(1)"
+     style="background:#FBFBFF; left:900px; top:1150px;"><p>1</p></div>
+<div id="4_f2" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(2)"
+     style="background:#FBFBFF; left:900px; top:1100px;"><p>2</p></div>
+<div id="4_f3" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(3)"
+     style="background:#FBFBFF; left:900px; top:1050px;"><p>3</p></div>
+<div id="4_f4" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(4)"
+     style="background:#FBFBFF; left:900px; top:1000px;"><p>4</p></div>
+<div id="4_f5" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(5)"
+     style="background:#FBFBFF; left:900px; top:950px;"><p>5</p></div>
+<div id="4_f6" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(6)"
+     style="background:#FBFBFF; left:900px; top:900px;"><p>6</p></div>
+<div id="4_f7" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(7)"
+     style="background:#FBFBFF; left:900px; top:850px;"><p>7</p></div>
+<div id="4_f8" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(8)"
+     style="background:#FBFBFF; left:900px; top:800px;"><p>8</p></div>
+<div id="4_f9" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(9)"
+     style="background:#FBFBFF; left:900px; top:750px;"><p>9</p></div>
+<div id="4_f10" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(10)"
+     style="background:#FBFBFF; left:900px; top:700px;"><p>10</p></div>
+<div id="4_f11" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(11)"
+     style="background:#FBFBFF; left:900px; top:650px;"><p>11</p></div>
+<div id="4_f12" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(12)"
+     style="background:#FBFBFF; left:900px; top:600px;"><p>12</p></div>
+<div id="4_f13" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(13)"
+     style="background:#FBFBFF; left:900px; top:550px;"><p>13</p></div>
+<div id="4_f14" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(14)"
+     style="background:#FBFBFF; left:900px; top:500px;"><p>14</p></div>
+<div id="4_f15" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(15)"
+     style="background:#FBFBFF; left:900px; top:450px;"><p>15</p></div>
+<div id="4_f16" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(16)"
+     style="background:#FBFBFF; left:900px; top:400px;"><p>16</p></div>
+<div id="4_f17" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(17)"
+     style="background:#FBFBFF; left:900px; top:350px;"><p>17</p></div>
+<div id="4_f18" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(18)"
+     style="background:#FBFBFF; left:900px; top:300px;"><p>18</p></div>
+<div id="4_f19" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(19)"
+     style="background:#FBFBFF; left:900px; top:250px;"><p>19</p></div>
+<div id="4_f20" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport4(20)"
+     style="background:#FBFBFF; left:900px; top:200px;"><p>20</p></div>
+
+<!--电梯5内按钮-->
+<div id="5_alert" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; alert5()"
+     style="background:#FBFBFF; left:1100px; top:150px;"><p>ALERT</p></div>
+<div id="5_f1" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(1)"
+     style="background:#FBFBFF; left:1100px; top:1150px;"><p>1</p></div>
+<div id="5_f2" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(2)"
+     style="background:#FBFBFF; left:1100px; top:1100px;"><p>2</p></div>
+<div id="5_f3" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(3)"
+     style="background:#FBFBFF; left:1100px; top:1050px;"><p>3</p></div>
+<div id="5_f4" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(4)"
+     style="background:#FBFBFF; left:1100px; top:1000px;"><p>4</p></div>
+<div id="5_f5" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(5)"
+     style="background:#FBFBFF; left:1100px; top:950px;"><p>5</p></div>
+<div id="5_f6" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(6)"
+     style="background:#FBFBFF; left:1100px; top:900px;"><p>6</p></div>
+<div id="5_f7" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(7)"
+     style="background:#FBFBFF; left:1100px; top:850px;"><p>7</p></div>
+<div id="5_f8" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(8)"
+     style="background:#FBFBFF; left:1100px; top:800px;"><p>8</p></div>
+<div id="5_f9" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(9)"
+     style="background:#FBFBFF; left:1100px; top:750px;"><p>9</p></div>
+<div id="5_f10" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(10)"
+     style="background:#FBFBFF; left:1100px; top:700px;"><p>10</p></div>
+<div id="5_f11" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(11)"
+     style="background:#FBFBFF; left:1100px; top:650px;"><p>11</p></div>
+<div id="5_f12" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(12)"
+     style="background:#FBFBFF; left:1100px; top:600px;"><p>12</p></div>
+<div id="5_f13" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(13)"
+     style="background:#FBFBFF; left:1100px; top:550px;"><p>13</p></div>
+<div id="5_f14" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(14)"
+     style="background:#FBFBFF; left:1100px; top:500px;"><p>14</p></div>
+<div id="5_f15" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(15)"
+     style="background:#FBFBFF; left:1100px; top:450px;"><p>15</p></div>
+<div id="5_f16" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(16)"
+     style="background:#FBFBFF; left:1100px; top:400px;"><p>16</p></div>
+<div id="5_f17" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(17)"
+     style="background:#FBFBFF; left:1100px; top:350px;"><p>17</p></div>
+<div id="5_f18" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(18)"
+     style="background:#FBFBFF; left:1100px; top:300px;"><p>18</p></div>
+<div id="5_f19" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(19)"
+     style="background:#FBFBFF; left:1100px; top:250px;"><p>19</p></div>
+<div id="5_f20" class ="E_button"  onclick="style.border = '2px solid white'; style.background = '#BB5E00'; transport5(20)"
+     style="background:#FBFBFF; left:1100px; top:200px;"><p>20</p></div>
+
+<!--电梯恢复运行按钮-->
+<input type="button" id="refresh_1" value="REFRESH ELEVATOR 1" onclick="refresh_1();">
+<input type="button" id="refresh_2" value="REFRESH ELEVATOR 2" onclick="refresh_2();">
+<input type="button" id="refresh_3" value="REFRESH ELEVATOR 3" onclick="refresh_3();">
+<input type="button" id="refresh_4" value="REFRESH ELEVATOR 4" onclick="refresh_4();">
+<input type="button" id="refresh_5" value="REFRESH ELEVATOR 5" onclick="refresh_5();">
+
+<script type="text/javascript" src="Elevator.js"></script>
+</body>
+</html>
